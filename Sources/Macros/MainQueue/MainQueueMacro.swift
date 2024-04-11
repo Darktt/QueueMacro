@@ -14,11 +14,16 @@ struct MainQueueMacro: ExpressionMacro
 {
     public static func expansion(of node: some FreestandingMacroExpansionSyntax, in context: some MacroExpansionContext) throws -> ExprSyntax
     {
-        guard let execution = node.arguments.first else {
+        if let execution = node.arguments.first {
             
-            throw MainQueueError.missingArgument("execution")
+            return "DispatchQueue.main.async(execute: \(execution))"
         }
         
-        return "DispatchQueue.main.async(execute: \(execution))"
+        if let execution = node.trailingClosure {
+            
+            return "DispatchQueue.main.async(execute: \(execution))"
+        }
+        
+        throw MainQueueError.missingArgument("execution")
     }
 }

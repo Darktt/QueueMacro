@@ -10,10 +10,10 @@ final class QueueMacroTests: XCTestCase
     {
         DispatchQueue.global(qos: .default).async {
             
-            #MainQueue({
+            #MainQueue {
                 
                 XCTAssertTrue(Thread.isMainThread)
-            })
+            }
         }
     }
 }
