@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import SwiftSyntaxMacros
 import SwiftSyntax
+import SwiftSyntaxMacros
 
 public
 struct MainQueueMacro: ExpressionMacro

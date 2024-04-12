@@ -12,6 +12,7 @@ import SwiftSyntaxMacros
 struct Plugins: CompilerPlugin
 {
     let providingMacros: [Macro.Type] = [
-        MainQueueMacro.self
+        AsyncMacro.self,
+        MainQueueMacro.self,
     ]
 }
