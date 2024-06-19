@@ -19,28 +19,20 @@ struct AsyncMacro: ExpressionMacro
             throw AsyncError.missingArgument("queue")
         }
         
-        print("queue: \(queue)")
+        if node.arguments.count == 2, let execution = node.arguments.last {
+            
+            return """
+            DispatchQueue\(queue).async(execute: \(execution))
+            """
+        }
         
-        return "print(\"Hello, World!\")"
+        if let execution = node.trailingClosure {
+            
+            return """
+            DispatchQueue\(queue).async \(execution)
+            """
+        }
         
-//        if let execution = node.arguments.last {
-//            
-//            return """
-//            \(queue).async {
-//                \(execution)
-//            }
-//            """
-//        }
-//        
-//        if let execution = node.trailingClosure {
-//            
-//            return """
-//            \(queue).async {
-//                \(execution)
-//            }
-//            """
-//        }
-//        
-//        throw AsyncError.missingArgument("execution")
+        throw AsyncError.missingArgument("execution")
     }
 }

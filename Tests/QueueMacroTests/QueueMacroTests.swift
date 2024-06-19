@@ -23,14 +23,14 @@ final class QueueMacroTests: XCTestCase
         
         DispatchQueue.global(qos: .default).async {
             
-            #Async(queue: .main) {
+            #Async(queue: .main, {
                 
                 XCTAssertTrue(Thread.isMainThread)
                 expectation.fulfill()
-            }
+            })
         }
         
-        self.waitForExpectations(timeout: 1)
+        self.waitForExpectations(timeout: 1.0)
     }
     
     func testA()

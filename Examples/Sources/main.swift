@@ -7,3 +7,13 @@
 
 import Foundation
 import QueueMacro
+
+#Async({
+    
+    print("Hello, World!!!!!")
+})
+
+#Async(queue: .main, {
+    
+    print("Hello, World!!!!!")
+})

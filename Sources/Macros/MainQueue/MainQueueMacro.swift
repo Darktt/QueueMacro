@@ -21,7 +21,7 @@ struct MainQueueMacro: ExpressionMacro
         
         if let execution = node.trailingClosure {
             
-            return "DispatchQueue.main.async(execute: \(execution))"
+            return "DispatchQueue.main.async \(execution)"
         }
         
         throw MainQueueError.missingArgument("execution")

@@ -3,6 +3,8 @@
 
 import Foundation
 
+// Swift AST Explorer: https://swift-ast-explorer.com
+
 @freestanding(expression)
 public
 macro Async(queue: DispatchQueue = .main, _ execution: @escaping @Sendable @convention(block) () -> Void) = #externalMacro(module: "Macros", type: "AsyncMacro")
