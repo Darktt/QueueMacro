@@ -12,7 +12,8 @@ import SwiftSyntaxMacros
 public
 struct AsyncMacro: ExpressionMacro
 {
-    public static func expansion(of node: some FreestandingMacroExpansionSyntax, in context: some MacroExpansionContext) throws -> ExprSyntax
+    public static 
+    func expansion(of node: some FreestandingMacroExpansionSyntax, in context: some MacroExpansionContext) throws -> ExprSyntax
     {
         guard let queue = node.arguments.first?.expression else {
             
