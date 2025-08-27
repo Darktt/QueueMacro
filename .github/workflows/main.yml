@@ -14,8 +14,8 @@ jobs:
         with:
           swift-version: "5.10.0"
 
-      - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_16.4.app && /usr/bin/xcodebuild -version
+      # - name: Select Xcode
+      #   run: sudo xcode-select -switch /Applications/Xcode_16.4.app && /usr/bin/xcodebuild -version
       
       - name: Build package
         run: swift build
