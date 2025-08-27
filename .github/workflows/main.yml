@@ -1,0 +1,22 @@
+name: Swift
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Swift version
+        uses: fwal/setup-swift@v1
+
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_16.4.app && /usr/bin/xcodebuild -version
+      
+      - name: Build package
+        run: swift build
+
+      - name: Runing tests package
+        run: swift test
