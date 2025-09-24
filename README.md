@@ -1,6 +1,6 @@
 # QueueMacro
 
-[![Test QueueMacro](https://github.com/eden0606/QueueMacro/actions/workflows/main.yml/badge.svg)](https://github.com/eden0606/QueueMacro/actions/workflows/main.yml)
+[![Test QueueMacro](https://github.com/darktt/QueueMacro/actions/workflows/main.yml/badge.svg)](https://github.com/darktt/QueueMacro/actions/workflows/main.yml)
 
 一個 Swift 巨集套件，提供便利的 DispatchQueue 執行語法糖。
 
